@@ -1,0 +1,35 @@
+1. Show mount points details:
+   > lsblk
+
+2. Check available volumes: 
+   > vgdisplay or vgs or vgscan
+
+3. Check logical group: 
+   > lvs or lvdisplay or lvscan
+
+4. Create volume group: 
+   > vgcreate volumeName physicalVolume
+      eg. vgcreate datavg /dev
+
+5. Create logical volume: 
+   > lvcreate -L size -n lvmName vgName
+      eg. lvcreate -L 300G -n appslv datavg
+
+6. Format and Mount the Logical Volume:
+  i. Mount logical volume to ext4 filesystem -> 
+     > mkfs.ext4 /dev/datavg/appslv
+
+  ii. Persist mounts by adding to /etc/fstab file ->
+      > echo "/dev/mapper/datavg-appslv /apps ext4 defaults,nodev 0 0" >> /etc/fstab
+
+7. Reload system configuration:
+   > systemctl daemon-reload
+
+8. Mount the points based on fstab file:
+   > mount -a
+9. Check volumes: 
+   > vgs
+10. Check Mount points : 
+    > df -h
+
+[Note : If server reboot reboot then mount points should have persisted so in future shouldn't remount manually]
