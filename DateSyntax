@@ -1,0 +1,3 @@
+date -d "5 min" +"%T,%3N"
+date +"%T,%3N"
+date +"%T:%3N"
