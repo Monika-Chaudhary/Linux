@@ -1,0 +1,9 @@
+Over search, run command to connect with Postgresql db:
+  > psql -p5432         (portNo. - 5432, port has been updated to postgresql.conf files)
+
+
+It will connect to postgres, then over postgres terminal run any commands
+  a. List db
+      postgres=# \l
+
+
