@@ -1,0 +1,5 @@
+See which package installed over rhel machine
+    》rpm -qa | grep -i jdk
+
+To get list to install any package
+    》yum list | grep -i java
