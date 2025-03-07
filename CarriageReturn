@@ -1,0 +1,7 @@
+If carriage return with text
+
+Then
+
+variable=${variable//\r/}
+Print var as
+"$variable"
