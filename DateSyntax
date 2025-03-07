@@ -1,3 +1,18 @@
 date -d "5 min" +"%T,%3N"
 date +"%T,%3N"
 date +"%T:%3N"
+
+Script:
+Today date : $(date +"%d/%m/%y")
+Minus from date : $(date -d "-6 day" "+%d/%m/%y")
+$(date -d "-6 day" "+%d/%m/%Y")
+
+#!/bin/bash
+filePath='filePath'
+count=`grep '$(date +"%d/%m/%y")\|string\|string' "$filePath" | wc -l`
+if [ $count==7 ]
+then
+    echo "msg"
+else
+    echo "msg"
+fi
