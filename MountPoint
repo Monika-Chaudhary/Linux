@@ -33,3 +33,6 @@
     > df -h
 
 [Note : If server reboot reboot then mount points should have persisted so in future shouldn't remount manually]
+
+_______________________________________________________
+https://linuxize.com/post/how-to-mount-and-unmount-file-systems-in-linux/
