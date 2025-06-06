@@ -1,0 +1,2 @@
+//set hostname to my-server
+sudo hostnamectl set-hostname my-server
