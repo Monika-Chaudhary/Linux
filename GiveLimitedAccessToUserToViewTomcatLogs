@@ -1,0 +1,28 @@
+linux user who can log into serverr and has limited access only to view tomcat logs
+
+1. create user
+  > sudo adduser tomcatloguser
+
+2. set password
+  > passwd tomcatloguser
+      //give password
+
+3. to remove user from sudo group()red hat-based system
+  > sudo usermod -G "" tomcatloguser
+
+  to check group membership
+  > groups tomcatloguser
+
+4. set read-only access to logs directory
+  > sudo setfacl -m u:tomcatloguser:rx /opt/tomcatDir/logs
+  > sudo setfacl -R -m u:tomcatloguser:r /opt/tomcatDir/logs /*
+
+this allows user to
+  -> enter logs directory
+  -> read log files (ex. catalina.out)
+
+5. log in as user
+  > su - tomcatloguser
+  > cd /opt/tomcatDir/logs
+  > less catalina.out
+  
