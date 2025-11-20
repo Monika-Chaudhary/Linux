@@ -1,0 +1,31 @@
+1. Check port is listen on particular port
+  > tcpdump -A -i enp1s0 'port portNo'
+
+2. change no shell to shell
+  > usermod --shell /bin/bash userName
+
+3. open port
+  > sudo firewall-cmd --permanent --add-port=8080/tcp
+  > sudo firewall-cmd --reload
+  > sudo firewall-cmd --list-ports
+
+4. disable firewalld
+  > systemctl disable --now firewalld
+
+5. set java and maven path in windows cmd
+  > export JAVA_HOME="path/to/jdkFolder"
+
+  > export M2_HOME="path/to/apacheMavenFolder"
+
+  > export PATH=$PATH:$JAVA_HOME/bin:$M2_HOME/bin
+
+6. clean system buffer/clear pageCache
+  > sync; echo 1 > /proc/sys/vm/drop_caches
+  > sync; echo 2 > /proc/sys/vm/drop_caches
+  > sync; echo 3 > /proc/sys/vm/drop_caches
+
+7. find largest directory
+  > sudo du -h --max-depth=1 / | sort -hr | head -n 10
+
+8. set nfs server
+  https://www.tecmint.com/how-to-setup-nfs-server-in-linux/
