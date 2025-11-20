@@ -29,3 +29,15 @@
 
 8. set nfs server
   https://www.tecmint.com/how-to-setup-nfs-server-in-linux/
+
+  > yum install rpcbind nfs-utils -y
+  > systemctl enable nfs-server
+  > systemctl enable rpcbind
+  > systemctl status firewalld
+  > firewall-cmd --permanent --add-service={nfs,rpc-bind,mountd}
+  > firewall-cmd --reload
+  > vi /etc/fstab
+      nfsHostIp:/mountPoint /mountPath nfs defaults 0 0
+  > df -h
+  > systemctl daemon-reload
+  > mount -a
